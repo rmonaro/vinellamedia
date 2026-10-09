@@ -1,0 +1,103 @@
+@import './styles/nocturne.css';
+
+html { scroll-behavior: smooth; }
+body {
+  text-wrap: pretty;
+  background:
+    radial-gradient(1200px 720px at 82% -160px, color-mix(in srgb, var(--color-accent-900) 75%, transparent), transparent 60%),
+    radial-gradient(1100px 800px at -10% 100%, color-mix(in srgb, black 30%, transparent), transparent 55%),
+    var(--color-bg);
+  background-attachment: fixed;
+}
+a { color: var(--color-accent-300); }
+a:hover { color: var(--color-accent-200); }
+
+.page { min-height: 100vh; color: var(--color-text); font-family: var(--font-body); }
+.gutter { padding-inline: clamp(20px, 5vw, 72px); }
+
+/* nav */
+.site-nav { padding-block: 18px; max-width: 1344px; margin: 0 auto; }
+.site-nav .nav-brand { display: flex; align-items: center; }
+.logo { height: 28px; width: auto; }
+.wordmark { font-size: 18px; letter-spacing: -0.01em; color: var(--color-text); }
+.site-nav .btn-primary { color: var(--color-accent); }
+
+main { max-width: 1200px; margin: 0 auto; }
+
+.eyebrow {
+  display: block; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--color-accent); margin-bottom: 20px;
+}
+.h2 {
+  font-size: clamp(32px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.02em; margin: 0;
+}
+.muted { color: color-mix(in srgb, var(--color-text) 80%, transparent); }
+
+/* hero */
+.hero { padding: clamp(72px, 12vw, 152px) 0 clamp(72px, 10vw, 120px); }
+.hero h1 {
+  font-size: clamp(48px, 8vw, 112px); line-height: 1.02; letter-spacing: -0.035em;
+  margin: 0 0 0 -0.06em; max-width: 12ch;
+}
+.hero h1 span { display: block; }
+.hero h1 .accent { color: var(--color-accent); }
+.hero p {
+  font-size: 18px; line-height: 1.6; max-width: 52ch; margin: 36px 0 0;
+  color: color-mix(in srgb, var(--color-text) 82%, transparent);
+}
+.actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+
+.fade-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-divider) 48px, var(--color-divider) calc(100% - 48px), transparent);
+}
+
+/* services */
+.services { padding: clamp(72px, 9vw, 112px) 0 clamp(48px, 6vw, 72px); }
+.services .h2 { margin-bottom: 48px; max-width: 18ch; }
+.svc {
+  display: grid; grid-template-columns: minmax(48px, 120px) minmax(0, 360px) minmax(0, 1fr);
+  gap: 28px clamp(24px, 4vw, 72px); align-items: baseline; padding: 36px 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-neutral-700) 70%, transparent);
+}
+.svc-num { margin: 0; font-size: 15px; color: var(--color-accent); font-feature-settings: 'tnum' 1; }
+.svc h3 { margin: 0; font-size: clamp(26px, 2.6vw, 34px); letter-spacing: -0.02em; line-height: 1.15; }
+.svc-body { display: flex; flex-direction: column; gap: 16px; }
+.svc-body p { margin: 0; font-size: 16px; line-height: 1.65; max-width: 52ch; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* contact */
+.contact {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 48px clamp(32px, 6vw, 96px); padding: clamp(48px, 7vw, 96px) 0 clamp(72px, 9vw, 120px);
+  align-items: start;
+}
+.contact .h2 { max-width: 14ch; }
+.contact-intro { font-size: 16px; line-height: 1.65; margin: 24px 0 0; max-width: 40ch; }
+.contact .card { padding: clamp(20px, 3vw, 32px); }
+.form { display: flex; flex-direction: column; gap: 18px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.seg { display: flex; flex-wrap: wrap; }
+.seg-opt { flex: 1 1 auto; justify-content: center; }
+.submit-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.note { font-size: 13px; color: color-mix(in srgb, var(--color-text) 60%, transparent); }
+.sent { display: flex; flex-direction: column; gap: 14px; padding: 24px 0; }
+.sent-mark { width: 44px; height: 1px; background: var(--color-accent); }
+.sent h3 { margin: 0; font-size: 28px; letter-spacing: -0.015em; }
+.sent p { margin: 0; font-size: 16px; line-height: 1.65; }
+
+/* footer */
+.footer {
+  max-width: 1200px; margin: 0 auto; padding-top: 28px; padding-bottom: 40px;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  font-size: 13px; color: color-mix(in srgb, var(--color-text) 58%, transparent);
+}
+
+@media (max-width: 880px) {
+  .svc { grid-template-columns: 1fr; gap: 14px; }
+  .contact { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .navlink { display: none; }
+  .two { grid-template-columns: 1fr; }
+}
